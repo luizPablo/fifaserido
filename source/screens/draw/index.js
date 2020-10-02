@@ -57,7 +57,7 @@ const DrawScreen = props => {
     }, [])
 
     drawTeam = () => {
-        if (draw.length < 14) {
+        if (draw.length < 19) {
             setDrawing(true)
             const index = Math.floor((Math.random() * (pot.length - 1)) + 0)
             const item = pot[index]
