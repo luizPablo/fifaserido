@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, TouchableOpacity, Image, ImageBackground, StyleSheet, AsyncStorage, Alert } from 'react-native'
 
-import logofs from '../../../images/logo-fs.jpg'
+import logofs from '../../../images/logo-fs.png'
 import background from '../../../images/background.png'
 
 const HomeScreen = props => {
@@ -45,11 +45,10 @@ const HomeScreen = props => {
     }
 
     return (
-        <ImageBackground source={background} blurRadius={20} style={styles.background}>
+        <ImageBackground source={background} style={styles.background}>
             <View style={styles.container}>
                 <View style={styles.header}>
                     <Image source={logofs} style={styles.logo} />
-                    <Text style={styles.title}>draw</Text>
                 </View>
 
                 <View style={styles.content}>
@@ -88,12 +87,10 @@ const styles = StyleSheet.create({
     },
 
     header: {
-        flex: 1,
+        flex: 3,
         width: '100%',
-        justifyContent: 'space-evenly',
+        justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ffffff80',
-        borderRadius: 50,
     },
 
     content: {
@@ -104,11 +101,8 @@ const styles = StyleSheet.create({
     },
 
     logo: {
-        height: 120,
-        width: 120,
-        borderRadius: 100,
-        borderWidth: 3,
-        borderColor: '#ff0068',
+        height: 200,
+        width: 150,
     },
 
     title: {
@@ -125,14 +119,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 10,
-        backgroundColor: '#ffffff80',
+        backgroundColor: '#3121d680',
     },
 
     buttonText: {
-        fontSize: 12,
+        fontSize: 10,
         fontWeight: 'bold',
         textTransform: 'uppercase',
-        color: '#002d8a'
+        color: '#fff',
+        letterSpacing: 1
     }
 })
 

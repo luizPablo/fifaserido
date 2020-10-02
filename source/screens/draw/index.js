@@ -95,7 +95,7 @@ const DrawScreen = props => {
                 } else {
                     message += `_0${index + 1}º escolha:_ ${item.team.name} (${item.index + 1})\n`
                 }
-                
+
             });
 
             try {
@@ -110,14 +110,14 @@ const DrawScreen = props => {
                 'Ai é foda',
                 'Tu quer compartilhar antes de terminar? Termine, cara',
                 [
-                    { text: 'OK', onPress: () => {} },
+                    { text: 'OK', onPress: () => { } },
                 ],
             )
         }
     };
 
     return (
-        <ImageBackground source={background} blurRadius={20} style={styles.background}>
+        <ImageBackground source={background} style={styles.background}>
             <View style={styles.container}>
                 <TouchableOpacity style={styles.drawButton} onPress={drawTeam}>
                     <Text style={styles.textButton}>SORTEAR TIME</Text>
@@ -142,20 +142,22 @@ const DrawScreen = props => {
             </View>
 
             <Modal visible={visible} animated animationType={'slide'}>
-                <View style={styles.modalContent}>
-                    {drawing &&
-                        <View style={[styles.modalTeam, { padding: 50 }]}>
-                            <Text style={styles.teamNameModal}>{msg}</Text>
-                        </View>
-                    }
-                    <Animated.View style={[styles.modalTeam, { transform: [{ scale: springValue }] }]}>
-                        {team && !drawing && <Image source={team.shield} style={styles.shieldModal} />}
-                        {team && !drawing && <Text style={styles.teamNameModal}>{team.name}</Text>}
-                    </Animated.View>
-                    <TouchableOpacity style={styles.closeButton} onPress={() => { setVisible(false) }}>
-                        <Text style={styles.textButton}>Fechar</Text>
-                    </TouchableOpacity>
-                </View>
+                <ImageBackground source={background} style={styles.background}>
+                    <View style={styles.modalContent}>
+                        {drawing &&
+                            <View style={[styles.modalTeam, { padding: 50 }]}>
+                                <Text style={styles.teamNameModal}>{msg}</Text>
+                            </View>
+                        }
+                        <Animated.View style={[styles.modalTeam, { transform: [{ scale: springValue }] }]}>
+                            {team && !drawing && <Image source={team.shield} style={styles.shieldModal} />}
+                            {team && !drawing && <Text style={styles.teamNameModal}>{team.name}</Text>}
+                        </Animated.View>
+                        <TouchableOpacity style={styles.closeButton} onPress={() => { setVisible(false) }}>
+                            <Text style={styles.textButton}>Fechar</Text>
+                        </TouchableOpacity>
+                    </View>
+                </ImageBackground>
             </Modal>
         </ImageBackground>
     )
@@ -204,10 +206,12 @@ const styles = StyleSheet.create({
     },
 
     teamNameModal: {
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: 'bold',
-        color: '#002d8a',
+        color: '#fff',
         textAlign: 'center',
+        letterSpacing: 2,
+        textTransform: 'uppercase',
     },
 
     choices: {
@@ -219,15 +223,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         borderRadius: 10,
-        backgroundColor: '#fffffff0',
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.22,
-        shadowRadius: 2.22,
-        elevation: 3,
+        backgroundColor: '#3121d680',
     },
 
     choiceShield: {
@@ -236,8 +232,10 @@ const styles = StyleSheet.create({
     },
 
     choiceName: {
-        fontSize: 12,
-        color: '#002d8a',
+        fontSize: 10,
+        color: '#fff',
+        fontWeight: 'bold',
+        textTransform: 'uppercase'
     },
 
     closeButton: {
@@ -245,7 +243,7 @@ const styles = StyleSheet.create({
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#002d8a',
+        backgroundColor: '#3121d6',
     },
 
     drawButton: {
@@ -253,12 +251,14 @@ const styles = StyleSheet.create({
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#002d8a',
+        backgroundColor: '#3121d680',
         borderRadius: 10,
         marginTop: 20,
     },
 
     textButton: {
+        fontSize: 10,
+        textTransform: 'uppercase',
         fontWeight: 'bold',
         color: '#fff',
     },
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#002d8a',
+        backgroundColor: '#3121d6',
     },
 
     footButtonShare: {
@@ -281,7 +281,7 @@ const styles = StyleSheet.create({
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ff0068',
+        backgroundColor: '#ff3881',
     },
 })
 

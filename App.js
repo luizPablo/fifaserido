@@ -3,10 +3,17 @@ import { createStackNavigator } from 'react-navigation-stack'
 import HomeScreen from './source/screens/home'
 import MultiplyScreem from './source/screens/multiply'
 import DrawScreen from './source/screens/draw'
+import Splash from './source/screens/splash'
 
 import './source/config/statusBarConfig'
 
 const MainNavigator = createStackNavigator({
+  Splash: {
+    screen: Splash, navigationOptions: {
+      header: null
+    }
+  },
+
   Home: {
     screen: HomeScreen, navigationOptions: {
       header: null
@@ -17,18 +24,19 @@ const MainNavigator = createStackNavigator({
     screen: MultiplyScreem, navigationOptions: {
       title: 'Classificação',
       headerStyle: {
-        backgroundColor: '#fff',
+        backgroundColor: '#3121d6',
       },
-      headerTintColor: '#002d8a',
+      headerTintColor: '#fff',
     }
   },
+
   Draw: {
     screen: DrawScreen, navigationOptions: {
       title: 'Sorteio',
       headerStyle: {
-        backgroundColor: '#fff',
+        backgroundColor: '#3121d6',
       },
-      headerTintColor: '#002d8a',
+      headerTintColor: '#fff',
     }
   },
 });
