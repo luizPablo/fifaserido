@@ -88,7 +88,7 @@ const DrawScreen = props => {
 
     onShare = async () => {
         if (draw.length === 14) {
-            let message = '*LIGA FIFA SERIDÓ: SEQUÊNCIA SORTEADA*\n\n';
+            let message = '*LIGA FIFA SERIDÓ: SEQUÊNCIA SORTEADA*\n(limite de 5 escolhas)\n\n';
             draw.forEach((item, index) => {
                 if (index >= 9) {
                     message += `_${index + 1}º escolha:_ ${item.team.name} (${item.index + 1})\n`
@@ -97,6 +97,7 @@ const DrawScreen = props => {
                 }
 
             });
+            message += '\n\n#DRAFT'
 
             try {
                 await Share.share({
