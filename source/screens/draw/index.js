@@ -87,7 +87,7 @@ const DrawScreen = props => {
     }
 
     onShare = async () => {
-        if (draw.length === 14) {
+        if (draw.length === 19) {
             let message = '*LIGA FIFA SERIDÓ: SEQUÊNCIA SORTEADA*\n(limite de 5 escolhas)\n\n';
             draw.forEach((item, index) => {
                 if (index >= 9) {
