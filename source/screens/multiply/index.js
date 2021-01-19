@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react'
 import { Text, View, TouchableOpacity, Image, ImageBackground, Modal, FlatList, StyleSheet, AsyncStorage, Alert } from 'react-native'
 
 import background from '../../../images/background.png'
+
 import ajax from '../../../images/teams-shields/ajax.png'
-import arsenal from '../../../images/teams-shields/arsenal.png'
+import villareal from '../../../images/teams-shields/villareal.png'
 import atletico from '../../../images/teams-shields/atletico.png'
 import barcelona from '../../../images/teams-shields/barcelona.png'
 import bayern from '../../../images/teams-shields/bayern.png'
 import chelsea from '../../../images/teams-shields/chelsea.png'
 import city from '../../../images/teams-shields/city.png'
 import dortmund from '../../../images/teams-shields/dortmund.png'
-import everton from '../../../images/teams-shields/everton.png'
-import fluminense from '../../../images/teams-shields/fluminense.png'
-import fulham from '../../../images/teams-shields/fulham.png'
+import wolves from '../../../images/teams-shields/wolves.png'
+import leicester from '../../../images/teams-shields/leicester.png'
 import leeds from '../../../images/teams-shields/leeds-united.png'
 import liverpool from '../../../images/teams-shields/liverpool.png'
 import psg from '../../../images/teams-shields/psg.png'
@@ -32,24 +32,23 @@ const MultiplyScreen = props => {
 
     const [teams, setTeams] = useState([
         { index: 0, name: 'AFC Ajax', shield: ajax, check: false },
-        { index: 1, name: 'Arsenal FC', shield: arsenal, check: false },
+        { index: 1, name: 'Villarreal CF', shield: villareal, check: false },
         { index: 2, name: 'Atlético de Madrid', shield: atletico, check: false },
         { index: 3, name: 'FC Barcelona', shield: barcelona, check: false },
         { index: 4, name: 'FC Bayern München', shield: bayern, check: false },
         { index: 5, name: 'Chelsea FC', shield: chelsea, check: false },
         { index: 6, name: 'Manchester City', shield: city, check: false },
         { index: 7, name: 'Borussia Dortmund', shield: dortmund, check: false },
-        { index: 8, name: 'Everton FC', shield: everton, check: false },
-        { index: 9, name: 'Fluminense FC', shield: fluminense, check: false },
-        { index: 10, name: 'Fulham FC', shield: fulham, check: false },
-        { index: 11, name: 'Leeds United', shield: leeds, check: false },
-        { index: 12, name: 'Liverpool FC', shield: liverpool, check: false },
-        { index: 13, name: 'Paris Saint-Germain', shield: psg, check: false },
-        { index: 14, name: 'RB Leipzig', shield: leipzig, check: false },
-        { index: 15, name: 'Real Madrid', shield: real, check: false },
-        { index: 16, name: 'Tottenham Hotspur', shield: spurs, check: false },
-        { index: 17, name: 'Manchester United', shield: united, check: false },
-        { index: 18, name: 'Valencia CF', shield: valencia, check: false },
+        { index: 8, name: 'Wolverhampton Wanderers FC', shield: wolves, check: false },
+        { index: 9, name: 'Leicester City FC', shield: leicester, check: false },
+        { index: 10, name: 'Leeds United', shield: leeds, check: false },
+        { index: 11, name: 'Liverpool FC', shield: liverpool, check: false },
+        { index: 12, name: 'Paris Saint-Germain', shield: psg, check: false },
+        { index: 13, name: 'RB Leipzig', shield: leipzig, check: false },
+        { index: 14, name: 'Real Madrid', shield: real, check: false },
+        { index: 15, name: 'Tottenham Hotspur', shield: spurs, check: false },
+        { index: 16, name: 'Manchester United', shield: united, check: false },
+        { index: 17, name: 'Valencia CF', shield: valencia, check: false },
     ])
 
     const [table, setTable] = useState([
@@ -71,7 +70,6 @@ const MultiplyScreen = props => {
         { index: 15, team: null },
         { index: 16, team: null },
         { index: 17, team: null },
-        { index: 18, team: null },
     ])
 
     openChoices = index => {
